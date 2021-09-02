@@ -1,5 +1,5 @@
 {
-    "name": "ed/contao-article-container-class",
+    "name": "edsolution/contao-article-container-class",
     "description": "Add custom CSS class to article container",
     "type": "contao-module",
     "license": "LGPL-3.0+",
@@ -18,7 +18,7 @@
     "extra": {
         "contao": {
             "sources": {
-                "": "system/modules/ed-article-container-class"
+                "": "system/modules/edsolution-article-container-class"
             }
         }
     }
