@@ -11,25 +11,25 @@
  * @copyright 2015
  */
 
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
 /**
  * Modify palettes
 */
-$GLOBALS['TL_DCA']['tl_article']['palettes']['default'] = str_replace (
-  'customTpl',
-  'customTpl,containerCssClass',
-  $GLOBALS['TL_DCA']['tl_article']['palettes']['default']
-);
+PaletteManipulator::create()
+  ->addField('containerClass', 'customTpl')
+  ->applyToPalette('default', 'tl_article')
+;
 
-$GLOBALS['TL_DCA']['tl_page']['fields'] += [
-  'containerCssClass' => [
-      'label' => &$GLOBALS['TL_LANG']['tl_article']['containerCssClass'],
-      'exclude' => true,
-      'search' => true,
-      'inputType' => 'text',
-      'eval' => [
-          'maxlength' => 255,
-          'tl_class' => 'w50',
-      ],
-      'sql' => "varchar(255) NOT NULL default ''",
-  ],
-];
+// Fields
+$GLOBALS['TL_DCA']['tl_article']['fields']['containerClass'] = array(
+    'label'     => &$GLOBALS['TL_LANG']['tl_article']['containerClass'],
+    'exclude'   => true,
+    'filter'    => true,
+    'inputType' => 'text',
+    'eval' => [
+        'maxlength' => 255,
+        'tl_class' => 'w50',
+    ],
+    'sql' => "varchar(255) NOT NULL default ''",
+);
