@@ -15,7 +15,7 @@
 /**
  * Back end modules
  */
-$GLOBALS['TL_LANG']['MOD'][''] = array('', '');
+$GLOBALS['TL_LANG']['tl_article']['containerClass']                         = array('Container class', 'Here you can add additional container class.');
 
 
 /**
